@@ -1,5 +1,5 @@
 # tpe
-Integrantes: Maia Manze Cordeiro, Román Meclazcke
+Integrantes: Maia Manze Cordeiro (maia.manze@gmail.com), Román Meclazcke (romanmeclazcke12345@gmail.com)
 
 Temática: Ventas de una mueblería
 
