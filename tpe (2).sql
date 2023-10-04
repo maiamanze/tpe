@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2023 a las 23:41:45
+-- Tiempo de generación: 05-10-2023 a las 00:14:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,9 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `compras` (
   `id` int(11) NOT NULL,
-  `producto` varchar(200) NOT NULL,
+  `producto` int(11) NOT NULL,
   `monto` double NOT NULL,
-  `fecha` date NOT NULL,
   `cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -45,7 +44,8 @@ CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(200) NOT NULL,
   `material` varchar(200) NOT NULL,
-  `precio` double NOT NULL
+  `precio` double NOT NULL,
+  `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -58,7 +58,7 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `rol` varchar(100) NOT NULL
+  `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -70,7 +70,8 @@ CREATE TABLE `usuarios` (
 --
 ALTER TABLE `compras`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_cliente` (`cliente`);
+  ADD KEY `fk_cliente` (`cliente`),
+  ADD KEY `id_producto` (`producto`);
 
 --
 -- Indices de la tabla `productos`
@@ -114,9 +115,11 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `compras`
 --
 ALTER TABLE `compras`
-  ADD CONSTRAINT `fk_cliente` FOREIGN KEY (`cliente`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `fk_cliente` FOREIGN KEY (`cliente`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `id_producto` FOREIGN KEY (`producto`) REFERENCES `productos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
