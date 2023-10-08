@@ -1,0 +1,62 @@
+.col img {
+    align-self: center;
+    width: 250px;
+    height: 250px;
+}
+
+.individualCard {
+    margin-left: 20%;
+    margin-right: 40%;
+    padding: 20px;
+    align-items: center;
+    width: 60%;
+    height: 30%;
+}
+
+.individualCard img {
+    width: 45%;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-body p {
+    margin-bottom: 2px;
+}
+
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitulo {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+ul,li,a {
+    list-style: none;
+    display: flex;
+    margin: 0px 10px;
+    color: black;
+}
+
+.contenedor-filtros {
+    display: flex;
+}
+
+.login {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 35%;
+    text-align: center;
+    width: 50%;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
+
+

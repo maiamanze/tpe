@@ -1,0 +1,20 @@
+<h3 class='subtitulo'>Nuestros productos</h3>
+<div class='contenedor-filtros'>
+<h5>Filtrar por categoría</h5>
+
+<ul>
+  <?php foreach($categorias as $cat): ?>
+      <li><a href="FiltroCategoria/ <?=$cat->id?>"><?=$cat->tipo?></a></li>
+  <?php endforeach; ?>
+  <li><a href="home">Mostrar todos</a></li>
+</ul>
+
+<div class="card mb-3 individualCard">
+  <img src="<?=$producto->imagen?>" class="card-img-top" alt="Imagen del producto">
+  <div class="card-body">
+    <h5 class="card-title"><?=$producto->nombre?></h5>
+    <p class="card-text">Material: <?=$producto->material?></p>
+    <p class="card-text">Precio: <?=$producto->precio?></p>
+    <p class="card-text">Categoría: <?=$producto->categoria?></p>
+  </div>
+</div>

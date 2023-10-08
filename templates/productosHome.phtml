@@ -1,0 +1,26 @@
+<h3 class='subtitulo'>Nuestros productos</h3>
+<div class='contenedor-filtros'>
+<h5>Filtrar por categoría</h5>
+
+<ul>
+  <?php foreach($categorias as $cat): ?>
+      <li><a href="FiltroCategoria/ <?=$cat->tipo?>"><?=$cat->tipo?></a></li>
+  <?php endforeach; ?>
+  <li><a href="home">Mostrar todos</a></li>
+</ul>
+
+</div>
+<div class="row row-cols-0 row-cols-md-4 g-4">
+  <?php foreach($muebles as $mueble): ?>
+    <div class="col">
+      <div class="card h-100">
+        <img src=<?=$mueble->imagen?> class="card-img-top imagenes" alt="Imagen del producto">
+        <div class="card-body">
+          <h5 class="card-title"><?=$mueble->nombre?></h5>
+          <a href='producto/<?=$mueble->id?>' type="button" class="btn btn-info">Ver más</a>
+        </div>
+      </div>
+  </div>
+  <?php endforeach; ?>
+</div>
+
