@@ -1,0 +1,27 @@
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto">
+            <a href="home"><h1 class="fs-2">Amueblarte</h1></a>
+        </div>
+
+        <nav class="nav nav-pills">
+            <a class="nav-item"><a href="home" class="nav-link">Home</a>
+            <a class="nav-item"><a href="administracion" class="nav-link">Administración</a> 
+
+            <?php if (session_status() != PHP_SESSION_ACTIVE) {
+                    session_start();
+                  }
+                  
+                  if (isset($_SESSION['logueado']) && $_SESSION['logueado'] == true): ?> 
+                    <li class="nav-item"><a href="logout" class="nav-link active" aria-current="page">Logout</a></li>
+            <?php else: ?>
+                    <li class="nav-item"><a href="login" class="nav-link active" aria-current="page">Login</a></li>
+            <?php endif; ?>
+           
+        </nav>
+        </header>
+    </div>
+
+    <main class="container mt-3">

@@ -1,0 +1,47 @@
+    <h2>Productos</h2>
+    <div class="contenedor-formulario-agregarproducto">
+        <form action="agregarItem" method='POST'>
+            <div class="mb-3">
+                <h6>Agregar producto</h6>
+                <label for="nombre">Nombre:</label>
+                <input name="nombre" type="text" class="form-control form-add-cattegoria" aria-describedby="emailHelp">
+                    
+                <label for="material">Material:</label>
+                <input name="material" type="text" class="form-control form-add-cattegoria" aria-describedby="emailHelp">
+                    
+                <label for="precio">Precio:</label>
+                <input name="precio" type="number" class="form-control form-add-cattegoria" aria-describedby="emailHelp">
+                    
+                <label for="imagen">Link de la imagen:</label>
+                <input name="imagen" type="text" class="form-control form-add-cattegoria" aria-describedby="emailHelp">
+
+                <label for="categoria">Categoría:</label>
+                <select name="categoria"> 
+                    <?php foreach($categorias as $cat): ?>
+                        <option value="<?=$cat->id?>"><?=$cat->tipo?></option>     
+                    <?php endforeach; ?>
+                </select>
+                    
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+        </form>
+    </div>
+
+    <h2>Lista de productos</h2>
+    <div class="col row g-4">
+        <?php foreach($items as $item): ?>
+            <div class="card" style="width: 15rem;">
+            <img src="<?=$item->imagen?>" class="card-img-top" alt="<?=$item->nombre?>">
+            <div class="card-body">
+                <h5 class="card-title"><?=$item->nombre?></h5>
+                <p class="card-text">Material: <?=$item->material?></p>
+                <p class="card-text">Precio: <?=$item->precio?></p>
+                <p class="card-text">Categoría: <?=$item->tipo?></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="eliminarItem/<?=$item->id?>" class="eliminar">Eliminar</a></li>
+                <li class="list-group-item"><a href="showEditarItem/<?=$item->id?>" class="modificar">Modificar</a></li>
+            </ul>
+            </div>
+        <?php endforeach; ?>
+    </div>

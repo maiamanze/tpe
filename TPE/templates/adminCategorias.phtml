@@ -1,0 +1,27 @@
+    <table class="table table-ligth table-sm">
+        <h2>Categorías</h2>
+        <div class="contenedor-formulario-agregarproducto">
+            <form action="agregarCategoria" method='POST'>
+                <div class="mb-3">
+                    <h6>Agregar categoría</h6>
+                    <input name="nombreCategoria" type="text" class="form-control form-add-cattegoria" placeholder="ingrese el nombre de la categoria" aria-describedby="emailHelp">
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+            </form>
+        </div>
+        <h5>Lista de categorías</h5>
+        <?php foreach($categorias as $categoria): ?>
+    <tr class="fila-categoria">
+    <td><?=$categoria->tipo;?></td>
+    <td><a href="eliminarCategoria/<?=$categoria->id?>" class="eliminar">Eliminar</a></td>
+    <td>
+        <form action="editarCategoria/<?=$categoria->id?>" method="POST">
+            <input type="text" name="nombre" placeholder="Nuevo nombre">
+            <button type="submit" class="btn btn-primary editar">Guardar</button>
+        </form>
+    </td>
+    </tr>
+    <?php endforeach; ?>
+    </table>
+
+    <div class="separacion border-bottom"></div>

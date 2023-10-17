@@ -1,0 +1,140 @@
+.col img {
+    align-self: center;
+    width: 200px;
+    height: 200px;
+}
+
+.individualCard {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 40%;
+    padding: 20px;
+    align-items: center;
+    width: 60%;
+    height: 30%;
+}
+
+.individualCard img {
+    width: 45%;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-body p {
+    margin-bottom: 2px;
+}
+
+.subtitulo {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+ul,li,a {
+    list-style: none;
+    display: flex;
+    margin: 0px 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.contenedor-filtros{
+    display: flex;
+}
+
+.btn {
+    color: white;
+    background-color: #5657FF;
+    border: #a7d1a7;
+}
+
+h1, .nav-link {
+    color: #00007A;
+    text-shadow: 2px 2px 4px #a1a1ff;
+}
+
+.nav-link:hover {
+    color: #a1a1ff;
+}
+
+.btn:hover {
+    background-color: #000060;
+    color: white;
+    transition:  1s ease;
+}
+
+.form-add-cattegoria{
+    width: 280px;
+}
+
+a.eliminar {
+  color: red;
+  margin: 0px;
+  width: 80px;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+
+a.eliminar:hover{
+    color: white;
+    background-color: red;
+    transition: 0.6s ease;
+}
+
+a.modificar {
+    color: rgb(242, 222, 4);
+    margin: 0px;
+    width: 80px;
+    padding: 0px 10px;
+    border-radius: 10px;
+  }
+  
+  a.modificar:hover{
+      color: white;
+      background-color: rgb(255, 187, 0);
+      transition: 0.6s ease;
+  }
+
+.divLogin {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    text-align: center;
+    width: 60%;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.separacion {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.tablaProductos {
+    font-size: smaller;
+}
+
+.contenedor-formularios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-formularios form {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.contenedor-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.productosTituloAdmin {
+    margin-bottom: 6%;
+    text-align: center;
+}
+
